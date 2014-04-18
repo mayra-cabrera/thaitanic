@@ -44,5 +44,5 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails", "~> 3.0"
   gem "letter_opener"
-  gem 'fakeweb'
+  gem 'shoulda-matchers'
 end

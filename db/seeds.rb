@@ -173,3 +173,10 @@ products.each do |key, product|
   end
 end
 
+puts "Loading restaurants"
+
+Restaurant.create!(name: "Thaitanic North", address: "The North street #123", description: "Lorem ipsum dolor sit amet.", code: "REST-001", phone: "123-456-789")
+Restaurant.create!(name: "Thaitanic South", address: "The South street #123", description: "Lorem ipsum dolor sit amet.", code: "REST-002", phone: "123-456-789")
+Restaurant.create!(name: "Thaitanic East", address: "The East street #123", description: "Lorem ipsum dolor sit amet.", code: "REST-003", phone: "123-456-789")
+Restaurant.create!(name: "Thaitanic West", address: "The West street #123", description: "Lorem ipsum dolor sit amet.", code: "REST-004", phone: "123-456-789")
+

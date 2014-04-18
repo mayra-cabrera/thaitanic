@@ -1,0 +1,17 @@
+-content_for :page_title do
+  = t(:editing_restaurant, code: @restaurant.code)
+
+-content_for :page_actions do
+  = button_link_to t(:back_to_restaurants_list), admin_restaurants_path, icon: 'icon-arrow-left'
+
+= render partial: 'restaurant_tabs', locals: { current: 'Restaurant Details' }
+= render partial: 'spree/shared/error_messages', locals: { target: @restaurant}
+
+= form_for [:admin, @restaurant], method: :put, html: {multipart: true} do |f|
+  %fieldset.no-border-top
+    = render partial: 'form', locals: { f: f}
+
+    %div{class: "form-buttons actions", "data-hook" => "admin_restaurant_form_buttons"}
+      = button Spree.t('actions.update'), 'icon-refresh'
+      %span.or= Spree.t(:or)
+      = button_link_to Spree.t('actions.cancel'), admin_restaurants_path, icon: 'icon-remove'

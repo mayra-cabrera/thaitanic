@@ -187,7 +187,6 @@ GEM
     factory_girl_rails (3.6.0)
       factory_girl (~> 3.6.0)
       railties (>= 3.0.0)
-    fakeweb (1.3.0)
     ffaker (1.24.0)
     fssm (0.2.10)
     haml (4.0.5)
@@ -295,6 +294,8 @@ GEM
     select2-rails (3.4.9)
       sass-rails
       thor (~> 0.14)
+    shoulda-matchers (2.2.0)
+      activesupport (>= 3.0.0)
     slop (3.5.0)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -332,7 +333,6 @@ DEPENDENCIES
   compass (= 0.12.2)
   compass-sourcemaps (~> 0.12.2.sourcemaps.57a186c)
   factory_girl_rails (~> 3.0)
-  fakeweb
   ffaker
   haml
   jquery-rails (= 3.0.0)
@@ -343,6 +343,7 @@ DEPENDENCIES
   sass (= 3.3.0.alpha.149)
   sass-rails (~> 3.2.3)
   select2-rails
+  shoulda-matchers
   spree!
   spree_auth_devise!
   spree_fancy!

@@ -1,0 +1,32 @@
+%div
+  %div{class: "left eigth columns alpha"}
+    = f.field_container :name do
+      = f.label :name, raw(t(:name) + content_tag(:span, ' *', class: 'required'))
+      = f.text_field :name, class: 'fullwidth title'
+      = f.error_message_on :name
+
+    = f.field_container :address do
+      = f.label :address, raw(t(:address) + content_tag(:span, ' *',  class: "required"))
+      = f.text_field :address, class: 'fullwidth title'
+      = f.error_message_on :address
+
+    = f.field_container :description do
+      = f.label :description, raw(t(:description) + content_tag(:span, ' *',  class: "required"))
+      = f.text_area :description, {rows: "20", class: 'fullwidth'}
+      = f.error_message_on :description
+
+  %div{class: "right four columns omega"}
+    = f.field_container :code do
+      = f.label :code,  raw(t(:code) + content_tag(:span, ' *', class: "required"))
+      = f.text_field :code, class: 'fullwidth title'
+      = f.error_message_on :code
+
+    = f.field_container :phone do
+      = f.label :phone, raw(t(:phone) + content_tag(:span, ' *', class: "required"))
+      = f.text_field :phone, class: 'fullwidth title'
+      = f.error_message_on :phone
+
+
+%div.clear
+%br
+ 

@@ -2,4 +2,23 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  address: "Address"
+  back_to_restaurants_list: "Back to restaurants list"
+
+  code: "Code"
+
+  description: "Description"
+
+  editing_restaurant: "Editing Restaurant: %{code}"
+
+  filter_results: "Filter results"
+
+  name: "Name"
+  new_restaurant: "New restaurant"
+
+  phone: "Phone"
+
+  restaurants: "Restaurants"
+  restaurant_details: "Restaurant Details"
+
+  search: "Search"

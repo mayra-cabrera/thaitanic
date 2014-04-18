@@ -1,0 +1,46 @@
+- content_for :page_title do
+  = t(:listing_restaurants)
+
+- content_for :page_actions do
+  %li#new_offering_link
+    = button_link_to t(:new_restaurant), new_admin_restaurant_path, icon: 'icon-plus'
+
+- content_for :table_filter_title do
+  = t(:search)
+
+- content_for :table_filter do
+  %div
+    = search_form_for [:admin, @search] do |f|
+      %div{class: "four columns"}
+        .field
+          = f.label :name_cont, t(:name)
+          = f.text_field :name_cont
+
+      %div{class: "four columns"}
+        .field
+          = f.label :code_cont, t(:code)
+          = f.text_field :code_cont
+
+      .clearfix
+      .actions.filter-actions
+        = button t(:filter_results), 'icon-search'
+
+%br
+%table.index#listing_offerings
+  %thead
+    %th= t(:code)
+    %th= t(:name)
+    %th= t(:address)
+    %th= t(:phone)
+  %tbody
+    - @restaurants.each do |restaurant|
+      %tr
+        %td{class: "align-center"}= restaurant.code
+        %td= restaurant.name
+        %td= restaurant.address
+        %td{class: "align-center"}= restaurant.phone
+        %td.actions
+          = link_to_edit_url edit_admin_restaurant_path(restaurant), no_text: true, class: 'edit'
+          = link_to_with_icon 'icon-trash', '', admin_restaurant_path(restaurant), method: :delete, no_text: true
+
+= paginate @restaurants

@@ -1,0 +1,8 @@
+- content_for :sidebar_title do
+  = @restaurant.code
+
+- content_for :sidebar do
+  %nav.menu
+    %ul
+      = content_tag :li, class: ('active' if current == 'Restaurant Details') do
+        =link_to_with_icon 'icon-edit', t(:restaurant_details), edit_admin_restaurant_path(@restaurant.id)
