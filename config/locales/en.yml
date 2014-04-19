@@ -6,7 +6,10 @@ en:
   back_to_restaurants_list: "Back to restaurants list"
 
   code: "Code"
+  complete: "Complete"
+  confirm: "Confirm"
 
+  delivery: "Delivery"
   description: "Description"
 
   editing_restaurant: "Editing Restaurant: %{code}"
@@ -16,9 +19,12 @@ en:
   name: "Name"
   new_restaurant: "New restaurant"
 
+  payments: "Payments"
   phone: "Phone"
 
+  restaurant: "Restaurant"
   restaurants: "Restaurants"
   restaurant_details: "Restaurant Details"
 
+  save_and_continue: "Save and continue"
   search: "Search"

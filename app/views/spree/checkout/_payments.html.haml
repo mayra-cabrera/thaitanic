@@ -1,0 +1,32 @@
+%fieldset#payment
+  %legend{align: "center"}= t(:payment_information)
+  = image_tag 'credit_cards/credit_card.gif', id: 'credit-card-image'
+  %p.field
+    = label_tag "card_number", t(:card_number)
+    %span.required *
+    = text_field_tag "credit_card_information[number]", '', autocomplete: "off", "data-encrypted-name" => "credit_card_information[number]"
+
+  %p.field
+    = label_tag "card_month", t(:expiration)
+    %span.required *
+    %br
+    = select_month(Date.today, { prefix: "credit_card_information", field_name: 'expiration_month', add_month_numbers: true }, class: 'required', id: "card_month")
+    = select_year(Date.today, { prefix: "credit_card_information", field_name: 'expiration_year', start_year: Date.today.year, end_year: Date.today.year}, class: 'required', id: 'card_year')
+
+  %p.field
+    = label_tag "card_code", t(:card_code)
+    %span.required *
+    = text_field_tag "credit_card_information[cvv]", '', autocomplete: "off", "data-encrypted-name" => "credit_card_information[cvv]"
+    = link_to t(:what_is_this), spree.content_path('cvv'), target: '_blank', id: "cvv_link"
+
+%br.space
+
+%div.form-buttons
+  = submit_tag t(:save_and_continue), class: 'continue button primary'
+
+:plain
+  <script type="text/javascript" src="https://js.braintreegateway.com/v1/braintree.js"></script>
+
+:javascript
+  var braintree = Braintree.create("#{BRAINTREE_CONFIG[:client_side_encryption_key]}");
+  braintree.onSubmitEncryptForm('checkout_form_payments');
