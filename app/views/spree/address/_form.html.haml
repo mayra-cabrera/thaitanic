@@ -1,0 +1,41 @@
+- address_id = address_type.chars.first
+
+%div.inner
+  %p.field
+    = form.label :firstname, t(:first_name)
+    %span.required*
+    %br
+    =form.text_field :firstname, class: 'required'
+
+  %p.field
+    = form.label :lastname, t(:last_name)
+    %span.required*
+    %br
+    = form.text_field :lastname, class: 'required'
+
+  %p.field
+    = form.label :address1, t(:street_address)
+    %span.required*
+    %br
+    = form.text_field :address1, class: 'required'
+
+  %p.field
+    = form.label :address2, t(:street_address_2)
+    %br
+    = form.text_field :address2
+
+  %p.field
+    = form.label :zipcode, t(:zip)
+    = form.text_field :zipcode
+
+  %p.field
+    = form.label :phone, t(:phone)
+    %span.required*
+    %br
+    = form.phone_field :phone, class: 'required'
+
+
+  %div{style: "display:none"}
+    = form.text_field :city, value: "My city"
+    = form.text_field :country_id, value: 49
+    = form.text_field :state_id, value: 39

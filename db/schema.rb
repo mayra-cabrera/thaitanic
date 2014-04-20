@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140418003809) do
+ActiveRecord::Schema.define(:version => 20140419170528) do
 
   create_table "restaurants", :force => true do |t|
     t.string   "name"
@@ -237,6 +237,7 @@ ActiveRecord::Schema.define(:version => 20140418003809) do
     t.string   "last_ip_address"
     t.integer  "created_by_id"
     t.string   "channel",                                                           :default => "spree"
+    t.integer  "restaurant_id"
   end
 
   add_index "spree_orders", ["completed_at"], :name => "index_spree_orders_on_completed_at"

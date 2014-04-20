@@ -1,5 +1,19 @@
 Spree::CheckoutController.class_eval do
-	before_filter :complete_order, only: :update
+	before_filter :complete_order, :copy_bill_address, only: :update
+
+  private
+
+  def before_address
+    @order.bill_address ||= Spree::Address.default
+    @order.ship_address ||= Spree::Address.default
+
+    @restaurants = Restaurant.all
+  end
+
+  def copy_bill_address
+    return unless @order.address?
+    @order.ship_address = @order.bill_address
+  end
 
 	def complete_order
 		return unless @order.payments?

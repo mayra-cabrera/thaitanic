@@ -32,11 +32,10 @@ taxonomies.each do |taxonomy_attrs|
 end
 
 puts "Load Shipping Categories.."
-Spree::ShippingCategory.create!(name: "Default")
+shipping_category = Spree::ShippingCategory.create!(name: "Via")
 
 puts "Load products..."
-shipping_category = Spree::ShippingCategory.find_by_name!("Default")
-default_attrs = { description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a dolor ut nisl eleifend vulputate. Ut eleifend neque ligula, cursus iaculis odio lacinia non. ", available_on: Time.zone.now }
+default_attrs = { description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a dolor ut nisl eleifend vulputate.  ", available_on: Time.zone.now }
 
 products = [
   { name: "Foie gras tamarind sauce", shipping_category: shipping_category, price: 15.99 },
@@ -72,7 +71,7 @@ products = {
   foie_gras: "Foie gras tamarind sauce",
   phunket: "Phuket pineapple salads",
   lamb_chop: "Lamb chop",
-  nam_prik: "Paprika chop",
+  nam_prik: "Paprika",
   duck_salad:  "Duck salad",
   spare_ribs:  "Spare ribs",
   sarong_prawn: "Sarong prawn",
@@ -152,17 +151,31 @@ combo = Spree::OptionValue.find_by_name("Combo")
 i = 1
 products.each do |key, product| 
   combinations = { "first" => [large, combo], "second" => [large, individual], "third" => [small, combo], "fourth" => [small, individual] }
-  sku = "ROR00-" + i.to_s
+  sku = "ROR-00" + i.to_s
   combinations.each do |key, combination|
     variant = product.variants.new
     variant.sku = sku
     variant.option_values = combination
     variant.cost_price = 17
+    variant.price = case key
+                    when "first" then 30.0
+                    when "second" then 26.7
+                    when "third" then 20
+                    when "fourth" then 15
+                  end
     variant.save
   end
   i += 1
 end
 
+def get_price_for_combination(key)
+  price = case key
+  when "first" then 30.0
+  when "second" then 26.7
+  when "third" then 20
+  when "fourth" then 15
+  end
+end
 
 puts "Loading properties..."
 properties = { "Protein" => "A lot", "Vitamins" => "A, D, B, E", "Others" => "Calcium", "Calories" => "500kc"}

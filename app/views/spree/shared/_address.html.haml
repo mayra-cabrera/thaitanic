@@ -1,0 +1,18 @@
+%div{class: "address vcard"}
+  %div.fn= address.full_name
+
+  %div.adr
+    %div.street-address
+      %div.street-address-line
+        = address.address1
+      - unless address.address2.blank?
+        %div.street-address-line
+          = address.address2
+
+  %div.local
+    %span.postal-code= address.zipcode
+
+  - unless address.phone.blank?
+    %div.tel
+      %span.type= t(:phone)
+      = address.phone

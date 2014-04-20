@@ -1,0 +1,17 @@
+- content_for :subheader do
+  = render 'slider'
+
+%div{id: "welcome-message"}
+  %div.container
+    %h1= t(:welcome_to_thaitanic_restaurants)
+    %h1
+      Choose <a href="/products">anything you wish</a> from the menu, we’ll send it to your <a href="/products">home!</a>
+
+%div.container
+  - if @featured_products
+    %div{id: "featured-products", class: "row"}
+      %h3= t(:featured_products)
+      %hr
+      %ul.carousel
+        - @featured_products.each do |product|
+          = render 'product', product: product

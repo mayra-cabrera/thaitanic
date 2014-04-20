@@ -1,4 +1,5 @@
 Spree::Order.class_eval do
+  attr_accessible :restaurant_id
 
   checkout_flow do
     go_to_state :address
@@ -8,11 +9,18 @@ Spree::Order.class_eval do
     go_to_state :complete
   end
 
+  belongs_to :restaurant, foreign_key: :restaurant_id, class_name: 'Restaurant'
+
   after_create :update_order_number
+  validates_presence_of :restaurant_id, if: :is_address?, message: "is empty, please choose one :)"
 
   def update_order_number
     number = self.id.to_s
     self.update_attribute_without_callbacks :number, number
+  end
+
+  def is_address?
+    state == "address"
   end
 
   def create_braintree_transaction(credit_card_information)

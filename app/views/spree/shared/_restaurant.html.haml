@@ -1,0 +1,11 @@
+%div{class: "address vcard"}
+  %div.fn= restaurant.name
+
+  %div.adr
+    %div.street-address
+      %div.street-address-line
+        = restaurant.address
+
+  %div.tel
+    %span.type= t(:phone)
+    = restaurant.phone

@@ -1,0 +1,18 @@
+%div{class: "columns alpha five", "data-hook" => "billing_fieldset_wrapper"}
+  %fieldset{id: "billing"}
+    = form.fields_for :bill_address do |bill_form|
+      %legend{align: "center"}= t(:your_address)
+      = render partial: 'spree/address/form', locals: { form: bill_form, address_type: 'billing', address: @order.bill_address }
+      %div{style: "display:none"}
+        = check_box_tag 'order[use_billing]', '1', true
+
+%div{class: "columns omega seven", "data-hook" => "shipping_fieldset_wrapper"}
+  %fieldset{id: "shipping"}
+    %legend{align: "center"}= t(:choose_restaurant)
+    = render partial: 'spree/shared/restaurants', locals: { form: form, restaurants: @restaurants }
+
+%hr.clear
+
+%div{class: "form-buttons", "data-hook" => "buttons"}
+  = submit_tag Spree.t(:save_and_continue), class: 'continue button primary'
+

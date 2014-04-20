@@ -2,29 +2,67 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  about_us: "About us"
   address: "Address"
   back_to_restaurants_list: "Back to restaurants list"
 
+  choose_restaurant: "Choose Restaurant"
   code: "Code"
   complete: "Complete"
   confirm: "Confirm"
+  contact: "Contact"
+  create: "Create"
+  create_a_new_account: "Create a new account"
 
   delivery: "Delivery"
+  delivery_by: "Delivery By"
   description: "Description"
 
+  edit: "Edit"
   editing_restaurant: "Editing Restaurant: %{code}"
 
+  faq: "F.A.Q."
+  featured_products: "Featured Products"
   filter_results: "Filter results"
+  first_name: "First Name"
+  forgot_password: "Forgot Password?"
+
+  last_name: "Last Name"
+  latest_products: "Latest Products"
+  login_as_existing: "Login as Existing Customer"
+
+  important_info: "Important Info"
 
   name: "Name"
+  new_customer: "New Customer"
+  new_products: "New Products"
   new_restaurant: "New restaurant"
+
+  menu: "Menu"
+  order_total: "Order Total"
+  our_best_offers: "Our Best Offers"
 
   payments: "Payments"
   phone: "Phone"
 
+  regular_services: "Regular Services"
+  returns: "Returns"
   restaurant: "Restaurant"
   restaurants: "Restaurants"
   restaurant_details: "Restaurant Details"
 
   save_and_continue: "Save and continue"
   search: "Search"
+  service: "Service"
+  specials: "Specials"
+  street_address: "Address 1"
+  street_address_2: "Address (cont)"
+
+  thaitanic_demo_store_01: "Thaitanic Demo Store 01"
+  top_sellers: "Top Sellers"
+  your_address: "Your address"
+
+  washington_dc_usa: "Washington DC, USA"
+  welcome_to_thaitanic_restaurants: "Welcome to Thaitanic Restaurants!"
+
+  zip: "Zip code"

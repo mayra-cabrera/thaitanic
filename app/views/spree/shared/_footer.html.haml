@@ -1,0 +1,38 @@
+%footer{id: "footer", class: "sixteen columns"}
+  %div.container
+
+    %div{class: "four  columns"}
+      %h5= t(:about_us)
+      %div.phone
+        %a{href: "callto:012341234567"} 01-234-5678-901
+      %br
+      %div.email
+        %a{href: "mailto:admin@thaitanic.com"} admin@thaitanic.com
+      %br
+      %div.address
+        = t(:thaitanic_demo_store_01)
+        %br
+        = t(:washington_dc_usa)
+
+    %div{class: "four columns"}
+      %h5= t(:our_best_offers)
+      %ul
+        %li= link_to t(:new_products), "/products"
+        %li= link_to t(:top_sellers), "/products"
+        %li= link_to t(:specials), "/products" 
+        %li= link_to t(:service), "/products"
+
+    %div{class: "four columns"}
+      %h5= t(:regular_services)
+      %ul
+        %li= link_to  t(:contact), "/products"
+        %li= link_to t(:returns), "/products"
+        %li= link_to t(:faq), "/products"
+
+    %div{class: "four columns"}
+      %h5= t(:important_info)
+      %p
+        This website is <strong>NOT</strong> a real store, 
+        it's a fully working demo application. 
+        Please feel free to play around, but don't submit 
+        any information you would not consider public!

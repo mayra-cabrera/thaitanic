@@ -1,0 +1,15 @@
+%table{class: "stock-contents"}
+  %colgroup
+    %col{style: "width: 10%"}
+    %col{style: "width: 45%"}
+    %col{style: "width: 45%"}
+  %thead
+    %th
+    %th{align: "left"}= t(:name)
+    %th= t(:address)
+  %tbody
+    - restaurants.each do | restaurant |
+      %tr
+        %td= form.radio_button :restaurant_id, restaurant.id, checked: (@order.restaurant_id == restaurant.id)
+        %td= restaurant.name
+        %td= restaurant.address

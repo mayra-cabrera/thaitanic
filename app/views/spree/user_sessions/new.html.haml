@@ -1,0 +1,13 @@
+- if flash[:alert]
+  %div{class: "flash errors"}= flash[:alert]
+
+- @body_id = 'login'
+%div{id: "existing-customer"}
+  %h6= t(:login_as_existing)
+  %div{"data-hook" => "login"}
+    = render partial: 'spree/shared/login'
+    = t(:or) + " "
+    = link_to t(:create_a_new_account), spree.signup_path 
+
+%div{"data-hook" => "login_extras"}
+
