@@ -41,7 +41,6 @@ products = [
   { name: "Foie gras tamarind sauce", shipping_category: shipping_category, price: 15.99 },
   { name: "Phuket pineapple salads", shipping_category: shipping_category, price: 22.99 },
   { name: "Lamb chop", shipping_category: shipping_category, price: 19.99 },
-  { name: "Paprika", shipping_category: shipping_category, price: 19.99 },
   { name: "Duck salad", shipping_category: shipping_category, price: 19.99 },
   { name: "Spare ribs", shipping_category: shipping_category, price: 19.99 },
   { name: "Sarong prawn", shipping_category: shipping_category, price: 19.99 },
@@ -71,7 +70,6 @@ products = {
   foie_gras: "Foie gras tamarind sauce",
   phunket: "Phuket pineapple salads",
   lamb_chop: "Lamb chop",
-  nam_prik: "Paprika",
   duck_salad:  "Duck salad",
   spare_ribs:  "Spare ribs",
   sarong_prawn: "Sarong prawn",
@@ -102,7 +100,7 @@ taxons = [
     taxonomy: categories,
     parent: "Categories",
     position: 1,
-    products: [ products[:takrai], products[:nam_prik] ]
+    products: [ products[:takrai] ]
   },
   {
     name: "Desserts",
@@ -192,4 +190,5 @@ Restaurant.create!(name: "Thaitanic North", address: "The North street #123", de
 Restaurant.create!(name: "Thaitanic South", address: "The South street #123", description: "Lorem ipsum dolor sit amet.", code: "REST-002", phone: "123-456-789")
 Restaurant.create!(name: "Thaitanic East", address: "The East street #123", description: "Lorem ipsum dolor sit amet.", code: "REST-003", phone: "123-456-789")
 Restaurant.create!(name: "Thaitanic West", address: "The West street #123", description: "Lorem ipsum dolor sit amet.", code: "REST-004", phone: "123-456-789")
+
 
