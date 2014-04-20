@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 
 # =================
 # Core Gems
 # =================
 gem 'rails', '3.2.17'
 gem 'jquery-rails', '3.0.0'
-gem 'sqlite3'
+gem 'pg'
 
 # =================
 # Assets
@@ -45,4 +46,8 @@ group :development, :test do
   gem "factory_girl_rails", "~> 3.0"
   gem "letter_opener"
   gem 'shoulda-matchers'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
