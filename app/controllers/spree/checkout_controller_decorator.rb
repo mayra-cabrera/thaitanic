@@ -3,6 +3,7 @@ Spree::CheckoutController.class_eval do
 
   private
 
+  # This is the before address method
   def before_address
     @order.bill_address ||= Spree::Address.default
     @order.ship_address ||= Spree::Address.default
