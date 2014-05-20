@@ -1,7 +1,7 @@
 class Spree::Admin::RestaurantsController < Spree::Admin::BaseController
   respond_to :html, :js
 
-
+  # comments
   def index
     @restaurants = search_restaurants.page(params[:page])
   end
